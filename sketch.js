@@ -1,5 +1,3 @@
-var ti = performance.now();
-
 var cols = 25;
 var rows = 25;
 
@@ -117,9 +115,6 @@ function draw(){
     // se o spot atual é igual o fim - achou o melhor caminho
     if (current === end){
       noLoop();
-      var tf = performance.now();
-      console.log(ti, tf, tf-ti); 
-      document.getElementById("time").innerHTML = "Tempo de excução: " + ((tf-ti)/1000).toFixed(2) + "s";
       document.getElementById("resultado").innerHTML = "Resultado: Solução encontrada!";
       document.getElementById("path").innerHTML = "Tamanho do caminho percorrido: " + (path.length+1);
     }
@@ -153,9 +148,6 @@ function draw(){
   } else {
     noSolution = true;
     noLoop();
-    var tf = performance.now();
-    console.log(ti, tf, tf-ti); 
-    document.getElementById("time").innerHTML = "Tempo de excução: " + ((tf-ti)/1000).toFixed(2) + "s";
     document.getElementById("resultado").innerHTML = "Resultado: sem solução :(";
     document.getElementById("path").innerHTML = "Tamanho do caminho percorrido: 0";
   }
